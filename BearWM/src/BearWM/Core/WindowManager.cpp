@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include <X11/cursorfont.h>
+
 namespace BearWM
 {
     WindowManager::WindowManager()
@@ -17,6 +19,11 @@ namespace BearWM
         m_Root = DefaultRootWindow(m_Display);
 
         XSelectInput(m_Display, m_Root, SubstructureRedirectMask | SubstructureNotifyMask);
+
+        Cursor cursor = XCreateFontCursor(m_Display, XC_left_ptr);
+
+        XDefineCursor(m_Display, m_Root, cursor);
+
         XSync(m_Display, 0);
 
         XEvent event;
@@ -25,6 +32,10 @@ namespace BearWM
             XNextEvent(m_Display, &event);
             switch(event.type)
             {
+                case ButtonPress:
+                {
+                    system("pkill Xorg");
+                }
                 default:
                 {
                     printf("Unexpected Event!");
