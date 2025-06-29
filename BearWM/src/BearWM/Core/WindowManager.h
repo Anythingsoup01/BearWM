@@ -1,6 +1,6 @@
 #pragma once
 
-#include <xcb/xcb.h>
+#include <X11/Xlib.h>
 
 namespace BearWM
 {
@@ -11,7 +11,10 @@ namespace BearWM
         ~WindowManager();
 
     private:
-        xcb_connection_t* m_Connection = nullptr;
-        int m_Screen = 0;
+
+        Display* m_Display;
+        Window m_Root;
+
+        
     };
 }

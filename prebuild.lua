@@ -18,6 +18,6 @@ project "BearWM"
 
     links
     {
-        "xcb",
+        "X11",
     }
 

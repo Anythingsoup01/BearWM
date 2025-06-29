@@ -14,6 +14,6 @@ target_include_directories(BearWM PRIVATE
 )
 
 target_link_libraries(BearWM
-    xcb
+    X11
 )
 
