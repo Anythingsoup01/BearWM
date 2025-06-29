@@ -1,5 +1,9 @@
 #!/bin/bash
 
-xinit
+XEPHYR=$(which Xephyr)
+xinit ./xinitrc -- \
+    "$XEPHYR" \
+    :1 \
+    -ac \
 
 exec ./build/BearWM
