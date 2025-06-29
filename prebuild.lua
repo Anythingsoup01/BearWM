@@ -2,12 +2,12 @@ workspace "BearWM"
 
 project "BearWM"
     kind "ConsoleApp"
-    language "C++"
-    dialect "20"
+    language "C"
+    dialect "23"
 
     files
     {
-        "BearWM/src/*.cpp",
+        "BearWM/src/*.c",
         "BearWM/src/*.h",
     }
 

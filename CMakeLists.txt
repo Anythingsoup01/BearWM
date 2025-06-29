@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.25)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-project(BearWM LANGUAGES CXX)
+project(BearWM LANGUAGES C)
 set(SRCS
-    BearWM/src/BearWM/Core/BearWM.cpp
-    BearWM/src/BearWM/Core/WindowManager.cpp
-    BearWM/src/BearWM/Core/WindowManager.h
+    BearWM/src/BearWM/Core/BearWM.c
 )
 add_executable(BearWM ${SRCS})
-set_property(TARGET BearWM PROPERTY CXX_STANDARD 20)
+set_property(TARGET BearWM PROPERTY C_STANDARD 23)
 
 target_include_directories(BearWM PRIVATE
     BearWM/src
