@@ -7,7 +7,7 @@
 Display* display;
 Window window;
 
-void grabKey(char* key, unsigned int mod)
+void grabKey(const char* key, unsigned int mod)
 {
     KeySym sym = XStringToKeysym(key);
     KeyCode code = XKeysymToKeycode(display, sym);
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 
     XDefineCursor(display, window, cursor);
 
-    XGrabButton(display, Button1, 0, window, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, NULL, NULL);
+    XGrabButton(display, Button1, 0, window, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, window, cursor);
 
     grabKey("a", ShiftMask | ControlMask);
     grabKey("s", ShiftMask | ControlMask);
