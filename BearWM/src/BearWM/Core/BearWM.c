@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
             }
             case KeyPress:
             {
-                if (e.xkey.keycode == GetKeyCode("b", ShiftMask | ControlMask))
+                if (e.xkey.keycode == GetKeyCode("a", ShiftMask | ControlMask))
                 {
                     return EXIT_SUCCESS;
                 }
