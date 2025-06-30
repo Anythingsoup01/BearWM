@@ -15,6 +15,12 @@ void grabKey(char* key, unsigned int mod)
     XSync(display, False);
 }
 
+unsigned int GetKeyCode(char* key, unsigned int mod)
+{
+    KeySym sym = XStringToKeysym(key);
+    return XKeysymToKeycode(display, sym);
+}
+
 int main(int argc, char* argv[])
 {
     display = XOpenDisplay(NULL);
@@ -53,7 +59,10 @@ int main(int argc, char* argv[])
             }
             case KeyPress:
             {
-                return EXIT_SUCCESS;
+                if (e.xkey.keycode == GetKeyCode("a", ShiftMask | ControlMask))
+                {
+                    return EXIT_SUCCESS;
+                }
                 break;
             }
             default:
