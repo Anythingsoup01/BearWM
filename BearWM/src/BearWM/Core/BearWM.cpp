@@ -15,7 +15,7 @@ void grabKey(const char* key, unsigned int mod)
     XSync(display, False);
 }
 
-bool GetKeyCode(XEvent* e, char* key, unsigned int mod)
+bool GetKeyCode(XEvent* e, const char* key, unsigned int mod)
 {
     KeySym sym = XStringToKeysym(key);
     return e->xkey.keycode == XKeysymToKeycode(display, sym);
