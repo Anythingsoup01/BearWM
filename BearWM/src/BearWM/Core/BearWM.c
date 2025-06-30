@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
     XGrabButton(display, Button1, 0, window, 0, ButtonPressMask, GrabModeSync, GrabModeAsync, NULL, NULL);
 
-    grabKey("a", ShiftMask);
+    grabKey("a", ShiftMask | ControlMask);
 
     XSync(display, False);
 
