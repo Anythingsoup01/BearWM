@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     grabKey("a", ShiftMask);
 
     XSync(display, False);
-    
+
     XEvent e;
     for(;;)
     {
@@ -52,6 +52,7 @@ int main(int argc, char* argv[])
             }
             case KeyPress:
             {
+                return EXIT_SUCCESS;
                 break;
             }
             default:
